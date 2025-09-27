@@ -1,0 +1,24 @@
+{
+    "name": "bibrary",
+    "version": "0.0.1",
+    "private": true,
+    "type": "module",
+    "workspaces": [
+        "package",
+        "www"
+    ],
+    "scripts": {
+        "dev": "bun run build:package && bun run --cwd www dev",
+        "build": "bun run build:package && bun run build:www",
+        "build:package": "bun run --cwd package build",
+        "build:www": "bun run --cwd www build",
+        "preview": "bun run --cwd www preview",
+        "format": "prettier --write ."
+    },
+    "devDependencies": {
+        "feconfig-bhs": "^1.0.7",
+        "prettier": "^3.4.2",
+        "tsdown": "^0.9.0",
+        "typescript": "^5.7.2"
+    }
+}
